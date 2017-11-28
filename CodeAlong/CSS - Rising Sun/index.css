@@ -1,0 +1,65 @@
+body {
+  margin: 0 0 0 0;
+  background-color: #2c3e50;
+}
+
+.grass {
+  background: green;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+}
+
+.sun {
+  background: #f1c40f;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+@keyframes weather {
+  0% { background-color: black}
+  10% { background-color: pink}
+  30% { background-color: blue}
+  70% { background-color: blue}
+  90% { background-color: pink}
+  100% { background-color: black}
+}
+
+@keyframes sun{
+  0%{
+    background:orange;
+    transform: translate(-200px,200px);
+  }
+  25%{
+    background: yellow;
+    transform: translate(30px, -25px);
+  }
+  50%{
+    background: yellow;
+    transform: translate(192px, -100px);
+  }
+  75%{background: yellow;
+    transform: translate(300px, -25px);
+  }
+  100%{
+    background: red;
+    transform: translate(550px, 200px);
+  }
+}
+
+.sun{
+  animation-name: sun;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+body {
+  animation-name: weather;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
