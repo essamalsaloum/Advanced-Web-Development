@@ -1,0 +1,5 @@
+fetch(url)
+.then(handleErrors)
+.then(parseJson)
+.then(updateprofile)
+.catch(printError)
