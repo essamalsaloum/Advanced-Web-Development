@@ -83,3 +83,7 @@ button {
 .footer:hover {
   background: #1abc9c;
 }
+
+#btn:hover {
+  cursor: pointer;
+}
