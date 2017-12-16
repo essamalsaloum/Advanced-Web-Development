@@ -12,8 +12,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 var todoRoutes = require('./routes/todos');
 app.use('/api/todos', todoRoutes);
 
+//Define static content
+app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
+
+
 app.get('/', function(req, res){
-    res.send("test");
+    res.sendFile("index.html");
 });
 
 app.listen(port, function (){
