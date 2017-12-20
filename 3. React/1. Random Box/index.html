@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="UTF-8">
+  <title>Random Box</title>
+  <script src="https://unpkg.com/react@16.0.0-rc.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.0.0-rc.2/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+  <script type="text/babel">
+    class RandomBox extends React.Component {
+      render(){
+        const randomFontSize = Math.random() * 5 + 'em';
+        const randomBkgrClr = '#' + Math.floor(Math.random() * (999999 - 100000)+ 100000);
+        console.log(randomBkgrClr);
+        return(
+          <div style={{height:'300px', width:'600px', background: randomBkgrClr, display: 'flex', justifyContent: 'center'}}>
+             <h1 style={{display: 'flex', alignItems: 'center', color: 'white', fontSize: randomFontSize}}>Random Box</h1>
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<RandomBox />, document.getElementsByTagName("Body")[0])
+  </script>
+</body>
+</html>
