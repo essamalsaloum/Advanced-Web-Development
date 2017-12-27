@@ -1,17 +1,25 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Box.css';
 
-class Box extends Component {
-    render() {
-    const style = {
-      width: '100px',
-      height: '100px',
-      display: 'inline-block',
-      backgroundColor: this.props.color,
-      borderRadius: '10px',
-      border: '10px solid grey'
+const Box = (props) => {
+    let style = {};
+    if(props.showing){
+      style.backgroundColor = props.backgroundColor;
     }
-    return <div style={style}></div>
-  }
-}
+    return (
+      <div
+      className="card-container"
+      style={style}
+      onClick={props.onClick}
+      />
+    );
+};
+
+Box.propTypes = {
+  showing: PropTypes.bool.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 export default Box;
